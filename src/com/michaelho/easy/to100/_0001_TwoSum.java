@@ -1,12 +1,13 @@
-package com.michaelho.leetcode50;
+package com.michaelho.easy.to100;
 
 import java.util.HashMap;
 
-public class Solutions5 {
-    /**
-     * LeetCode: https://leetcode.com/problems/two-sum/
-     * */
-    public int[] twoSum(int[] nums, int target) {
+/**
+ * LeetCode: https://leetcode.com/problems/two-sum/
+ * */
+class _0001_TwoSum {
+
+    int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> hash = new HashMap<>();
 
         for (int i = 0; i < nums.length; i++) {
@@ -18,6 +19,4 @@ public class Solutions5 {
 
         return new int[] {-1, -1};
     }
-
-
 }
