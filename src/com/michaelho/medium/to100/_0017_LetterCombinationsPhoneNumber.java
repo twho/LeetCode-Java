@@ -1,4 +1,4 @@
-package com.michaelho.medium;
+package com.michaelho.medium.to100;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -20,17 +20,12 @@ public class LinkedList {
         }
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equalsFromHead(ListNode head) {
+        if (head == null) {
             return false;
         }
 
-        if (!ListNode.class.isAssignableFrom(obj.getClass())) {
-            return false;
-        }
-
-        ListNode other = (ListNode) obj;
+        ListNode other = head;
         ListNode current = this.head;
 
         if (current.val != other.val) {

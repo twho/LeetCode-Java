@@ -2,8 +2,7 @@ package com.michaelho.easy.to100;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class EasyTests1to50 {
 
@@ -25,6 +24,16 @@ public class EasyTests1to50 {
         int[] expected = new int[] {321, -321, 21, 0};
         for (int i = 0; i < input.length; i++) {
             assertEquals(expected[i], sol.reverse(input[i]));
+        }
+    }
+
+    @Test
+    public void testValidParentheses() {
+        _0020_ValidParentheses sol = new _0020_ValidParentheses();
+        String[] input = new String[] {"()", "()[]{}", "(]", "([)]", "{[]}", "]", "["};
+        boolean[] expected = new boolean[] {true, true, false, false, true, false, false};
+        for (int i = 0; i < input.length; i++) {
+            assertEquals(expected[i], sol.isValid(input[i]));
         }
     }
 }

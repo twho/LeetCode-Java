@@ -1,4 +1,4 @@
-package com.michaelho.medium;
+package com.michaelho.medium.to100;
 
 /**
  * Convert integer to roman, the integer ranges from 1 to 1-3999.

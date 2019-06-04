@@ -1,12 +1,9 @@
-package com.michaelho.medium;
+package com.michaelho.medium.to100;
 
 import com.michaelho.models.LinkedList;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
@@ -18,7 +15,7 @@ public class MediumTests1to50 {
         _0002_AddTwoNumbers sol = new _0002_AddTwoNumbers();
         LinkedList linkedList1 = new LinkedList(new int[]{2, 4, 3}), linkedList2 = new LinkedList(new int[]{5, 6, 4});
         LinkedList expected = new LinkedList(new int[]{7, 0, 8});
-        assertTrue(expected.equals(sol.addTwoNumbers(linkedList1.head, linkedList2.head)));
+        assertTrue(expected.equalsFromHead(sol.addTwoNumbers(linkedList1.head, linkedList2.head)));
     }
 
     @Test
@@ -105,5 +102,29 @@ public class MediumTests1to50 {
         List<List<Integer>> output = sol.fourSum(input, target);
         assertTrue(expected.size() == output.size() &&
                 expected.containsAll(output) && output.containsAll(expected));
+    }
+
+    @Test
+    public void testRemoveNthFromEnd() {
+        _0019_RemoveNthNodeFromEndList sol = new _0019_RemoveNthNodeFromEndList();
+        LinkedList linkedList = new LinkedList(new int[]{1, 2, 3, 4, 5});
+        int n = 2;
+        LinkedList expected = new LinkedList(new int[]{1, 2, 3, 5});
+        assertTrue(expected.equalsFromHead(sol.removeNthFromEnd(linkedList.head, n)));
+    }
+
+    @Test
+    public void testGenerateParentheses() {
+        _0022_GenerateParentheses sol = new _0022_GenerateParentheses();
+        int n = 3;
+        List<String> expected = new ArrayList<>();
+        expected.add("((()))");
+        expected.add("(()())");
+        expected.add("(())()");
+        expected.add("()(())");
+        expected.add("()()()");
+        List<String> output = sol.generateParenthesis(n);
+        assertEquals(expected.size(), output.size());
+        assertTrue(expected.containsAll(output) && output.containsAll(expected));
     }
 }
