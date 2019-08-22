@@ -127,4 +127,21 @@ public class MediumTests1to50 {
         assertEquals(expected.size(), output.size());
         assertTrue(expected.containsAll(output) && output.containsAll(expected));
     }
+
+    @Test
+    public void testDivideTwoNumbers() {
+        _0029_DivideTwoIntegers sol = new _0029_DivideTwoIntegers();
+        int[] input = new int[] { -2147483648, -1 };
+        int expected = 2147483647;
+        assertEquals(expected, sol.divide(input[0], input[1]));
+    }
+
+    @Test
+    public void testSearchRotatedArray() {
+        _0033_SearchRotatedSortedArray sol = new _0033_SearchRotatedSortedArray();
+        int[] input = new int[] {4, 5, 6, 7, 0, 1, 2};
+        int target = 0;
+        int expected = 4;
+        assertEquals(expected, sol.search(input, target));
+    }
 }

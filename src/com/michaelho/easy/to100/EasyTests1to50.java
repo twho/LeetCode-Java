@@ -2,6 +2,8 @@ package com.michaelho.easy.to100;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 public class EasyTests1to50 {
@@ -35,5 +37,24 @@ public class EasyTests1to50 {
         for (int i = 0; i < input.length; i++) {
             assertEquals(expected[i], sol.isValid(input[i]));
         }
+    }
+
+    @Test
+    public void testRemoveDuplicatesFromSortedArray() {
+        _0026_RemoveDuplicatesFromSortedArray sol = new _0026_RemoveDuplicatesFromSortedArray();
+        int[] input = new int[] {1, 1, 1, 2};
+        int expected = 2;
+        assertEquals(expected, sol.removeDuplicates(input));
+    }
+
+    @Test
+    public void testRemoveElement() {
+        _0027_RemoveElement sol = new _0027_RemoveElement();
+        int[] input = new int[] {3, 2, 2, 3};
+        int target = 3;
+        int[] expected = new int[] {2, 2};
+        int result = sol.removeElement(input, target);
+        int[] resultArr = Arrays.copyOfRange(input, 0, result);
+        assertArrayEquals(expected, resultArr);
     }
 }
